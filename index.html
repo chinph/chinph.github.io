@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chi Nguyen | Data Analyst</title>
+<meta name="description" content="Data analyst portfolio. Banking, experimentation and product research, each built around a decision, with the checks, the errors caught and the limits written down.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Chi Nguyen</a>
+    <nav aria-label="Sections">
+      <a href="#how">How I work</a>
+      <a href="#work">Work</a>
+      <a href="#wrong">What I got wrong</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" style="border-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Data analyst &middot; banking, e-commerce and product research</p>
+    <h1>I turn ambiguous questions into decisions you can defend.</h1>
+    <p class="lede">Every project here starts with a named decision-maker and a written plan, and ends with an answer, the numbers behind it, what I checked, what I got wrong and where it breaks. I would rather tell you a result is fragile than let you find out.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See the work</a>
+      <a class="btn ghost" href="https://github.com/chinph">GitHub</a>
+    </div>
+    <ul class="facts">
+      <li><b>Open to</b> data analyst roles in New York City and Jersey City</li>
+      <li><b>Focus</b> credit and fraud, experimentation, customer and product research</li>
+      <li><b>Tools</b> Python, SQL, Streamlit (no BI dashboards)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How I work</h2>
+    <p class="section-note">Four habits show up in every project. Each links to the place where I actually did it.</p>
+    <div class="principles">
+      <article class="principle">
+        <h3>1. Write the plan before the data</h3>
+        <p>Decision, reader, metrics, method and predictions are written down first, so I can't quietly move the goalposts.</p>
+        <p class="proof">Every analysis has a research plan with logged predictions, and the write-up scores them, misses included.</p>
+      </article>
+      <article class="principle">
+        <h3>2. Check the data before trusting it</h3>
+        <p>Most wrong answers come from the data, not the model.</p>
+        <p class="proof">An A/B test that failed its own randomization check. Recent loans that look safe only because they are young. A model that scores 0.99 by reading the outcome.</p>
+      </article>
+      <article class="principle">
+        <h3>3. Real is not the same as worth acting on</h3>
+        <p>A significant result is not a decision. I convert effects into money, costs and break-even points.</p>
+        <p class="proof">Both test emails work; only one clearly pays. A loan cut-off is set by cost, not accuracy.</p>
+      </article>
+      <article class="principle">
+        <h3>4. Say where it breaks</h3>
+        <p>Each project ends with its limits, and the findings are stress-tested before I report them.</p>
+        <p class="proof">Rankings re-run under 10,000 random weightings; conclusions re-run with each outlier app removed.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p class="section-note">Each card gives the question, the answer, and one thing the analysis caught that a quicker version would have missed.</p>
+
+    <div class="track">
+      <h3 class="track-title">Banking and financial services</h3>
+      <div class="cards">
+
+        <article class="card">
+          <div class="fig"><img src="assets/credit-risk.png" alt="Line chart of profit against the share of loans approved, for three scoring approaches" loading="lazy"></div>
+          <div class="body">
+            <div><h3>Which applicants should a lender approve, and at what cut-off?</h3></div>
+            <div class="answer"><span class="label">Answer</span>Use an explainable scorecard and approve the safest 76%. On loans it had never seen, that earns <b>$0.39M more</b> than approving everyone (95% CI $0.18M to $0.59M), and ranks risk better than the platform's own score (AUC 0.711 vs 0.647).</div>
+            <div class="caught"><span class="label">What I caught</span>Counting young loans as "good" made 2013 loans look risk-free, so I used a fixed 12-month window. A boosted model added nothing measurable (+0.012 AUC, interval includes zero).</div>
+            <ul class="tags"><li>Credit modeling</li><li>Right-censoring</li><li>Calibration</li><li>Cost-based decisions</li></ul>
+            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/credit-risk">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/credit-risk/research_plan.md">Research plan</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="fig"><img src="assets/scam-losses.png" alt="Bar chart of the break-even scam rate by payment type under three assumptions about who bears the loss" loading="lazy"></div>
+          <div class="body">
+            <div><h3>Where do scam losses concentrate, and where should a bank add friction?</h3></div>
+            <div class="answer"><span class="label">Answer</span>A few large losses are most of the money: <b>12.6% of loss reports hold at least 87.6%</b> of the dollars, and bank transfers and crypto dominate the classified losses. Whether friction pays depends chiefly on who bears the loss: the break-even scam rate falls <b>16-fold</b> if the bank reimburses.</div>
+            <div class="caught"><span class="label">What I caught</span>Only 6.3% of scam complaints to the CFPB ended in monetary relief, and 15 of 29 large companies differ from the pooled rate by more than chance, so I framed the comparison as "differ", not "better".</div>
+            <ul class="tags"><li>Loss distributions</li><li>Decision model</li><li>Funnel plot</li></ul>
+            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/scams">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/scams/research_plan.md">Research plan</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="fig"><img src="assets/complaint-monitor.png" alt="Line chart of complaints and three alert thresholds after a huge spike, on a log scale" loading="lazy"></div>
+          <div class="body">
+            <div><h3>Which complaint streams should be escalated this week?</h3></div>
+            <div class="answer"><span class="label">Answer</span>Run a robust, alert-aware rule at about <b>6 new alerts a week</b>. In streams above 20 complaints a week it catches a 2x surge every time, and I back-tested it against four other rules.</div>
+            <div class="caught"><span class="label">What I caught</span>After a 21,608-complaint wave at Cash App (against about 45 a week), the textbook "mean + SD" rule needed roughly <b>11,000 complaints to alert, for 26 weeks</b>. It was blind to everything smaller.</div>
+            <ul class="tags"><li>Monitoring</li><li>Back-testing</li><li>Alert design</li></ul>
+            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/complaints">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/complaints/research_plan.md">Research plan</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="fig"><img src="assets/app-reviews.png" alt="Chart of odds ratios for a low rating by review theme" loading="lazy"></div>
+          <div class="body">
+            <div><h3>What should a bank fix first in its mobile app?</h3></div>
+            <div class="answer"><span class="label">Answer</span>Login and stability first: 37% of unhappy bank reviews mention them. Frozen or closed accounts are rare at banks (3%) but the costliest theme (odds ratio <b>12.8</b>). Redesigns draw the most comments but the least rating damage.</div>
+            <div class="caught"><span class="label">What I caught</span>Average rating across apps measured how often each app prompts happy users, not quality (0.99 correlation with five-star share), so I compared only 1 and 2 star reviews and validated my topic tagger on 200 unseen reviews.</div>
+            <ul class="tags"><li>Text analysis</li><li>Validation</li><li>Logistic regression</li></ul>
+            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/app-reviews">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/app-reviews/research_plan.md">Research plan</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="track">
+      <h3 class="track-title">Experimentation</h3>
+      <div class="cards">
+
+        <article class="card">
+          <div class="fig"><img src="assets/email-test.png" alt="Three panels of effect sizes of two emails on visits, conversions and spend, with confidence intervals" loading="lazy"></div>
+          <div class="body">
+            <div><h3>Which email should a retailer send, and is it worth the cost?</h3></div>
+            <div class="answer"><span class="label">Answer</span>Send the Men's email: about <b>$0.26 profit per customer</b>. The Women's email is real but marginal ($0.12, and the lower bound is $0.002), so it depends on margin and send cost.</div>
+            <div class="caught"><span class="label">What I caught</span>Checking a no-effect test every day and stopping at the first win declares a false winner <b>21% of the time, not 5%</b>. The plan, metrics and decision rule were fixed before looking at outcomes.</div>
+            <ul class="tags"><li>Randomized test</li><li>Multiple comparisons</li><li>Power and peeking</li></ul>
+            <div class="links"><a href="https://email-test-ecommerce.streamlit.app">Live app</a><a href="https://github.com/chinph/ecommerce-ab-testing">Code and case study</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="fig"><img src="assets/cookie-cats.png" alt="Chart of the change in 1-day and 7-day retention with confidence intervals" loading="lazy"></div>
+          <div class="body">
+            <div><h3>Should a mobile game move its first gate from level 30 to level 40?</h3></div>
+            <div class="answer"><span class="label">Answer</span>No. Seven-day retention falls <b>0.8 points</b> (95% CI 0.3 to 1.3 lower), and one-day retention is inconclusive.</div>
+            <div class="caught"><span class="label">What I caught</span>The test <b>fails its own sample-ratio check</b> (p = 0.009): 789 more players landed in one arm. The direction survives the worst case (still 0.66 points lower), but the size is less certain, so I flagged it to find out why.</div>
+            <ul class="tags"><li>A/B testing</li><li>Sample-ratio check</li><li>Robustness</li></ul>
+            <div class="links"><a href="https://github.com/chinph/cookie-cats-game-ab-test">Code and case study</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="track">
+      <h3 class="track-title">Product and market research</h3>
+      <div class="cards">
+
+        <article class="card featured">
+          <div class="fig"><img src="assets/wombloom.png" alt="Chart of the stars gained or lost by review topic" loading="lazy"></div>
+          <div class="body">
+            <div><h3>What should my pregnancy-journal app build first?</h3></div>
+            <div class="answer"><span class="label">Answer</span>Fix trust problems first: reviews that mention ads, updates or bugs average <b>2.4 to 2.6 stars against 4.16 overall</b>. Journaling is the clearest opening but a thin one. Pricing, updates and ads stayed in the top three of the priority ranking in 84% to 99% of 5,000 random weightings.</div>
+            <div class="caught"><span class="label">What I caught</span>An off-the-shelf sentiment model labeled only 44% of 1 and 2 star reviews as negative, so I built and validated topic rules on held-out reviews. Only 7 of 19 topics passed, and only those are treated as measurements.</div>
+            <ul class="tags"><li>Review analysis</li><li>Validation</li><li>Prioritization</li><li>Own product</li></ul>
+            <div class="links"><a href="https://wombloom-analysis-research.streamlit.app/">Interactive dashboard</a><a href="https://github.com/chinph/wombloom-product-research">Code and case study</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="fig"><img src="assets/olist.png" alt="Chart of the share of negative reviews by days late" loading="lazy"></div>
+          <div class="body">
+            <div><h3>Why don't Olist customers come back, and what should Olist fix first?</h3></div>
+            <div class="answer"><span class="label">Answer</span>True retention is about <b>2%</b>, and delivery barely moves it, but lateness is the main driver of bad reviews. Start with the Rio de Janeiro route, which produces 42% of excess late orders.</div>
+            <div class="caught"><span class="label">What I caught</span>30% of "repeat" orders were split baskets placed the same day, which made retention look like 3% when it is closer to 2%. Fixing delivery pays off in reviews, not in repeat customers.</div>
+            <ul class="tags"><li>SQL (DuckDB)</li><li>Survival analysis</li><li>Causal reasoning</li></ul>
+            <div class="links"><span class="soon">Repository coming soon</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="fig"><img src="assets/hanoi.png" alt="Chart of how often each Hanoi district ranks first under random scoring weights" loading="lazy"></div>
+          <div class="body">
+            <div><h3>Where should a caf&eacute; brand open next in Hanoi?</h3></div>
+            <div class="answer"><span class="label">Answer</span>Thanh Xu&acirc;n, ranked first in <b>80% of 10,000 random weightings</b>, with &#272;&#7889;ng &#272;a as the lower-risk alternative. A one-day field count of five shortlisted blocks is the go/no-go test.</div>
+            <div class="caught"><span class="label">What I caught</span>OpenStreetMap appears to miss small independent caf&eacute;s outside the centre, so every supply gap is re-estimated on chain caf&eacute;s only, and the README says openly that the lead depends on one score component.</div>
+            <ul class="tags"><li>Site selection</li><li>Count models</li><li>Sensitivity analysis</li></ul>
+            <div class="links"><a href="https://github.com/chinph/Hanoi-Vietnam-Market-Research">Code and case study</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wrong">
+  <div class="wrap">
+    <h2>Where I was wrong</h2>
+    <p class="section-note">I log predictions before each analysis and score them afterwards. These are the misses. They are the reason the right answers can be trusted.</p>
+    <ul class="wrong">
+      <li><b>Credit risk.</b> <span>I expected the lending platform's own score to be about as good as my scorecard. Mine ranked risk better by 0.064 AUC.</span></li>
+      <li><b>Complaint monitor.</b> <span>I expected a robust rule to recover quickly after a huge spike. It was only partly protected: its threshold sat 3 to 5 times above the new normal until I added an alert-aware baseline.</span></li>
+      <li><b>Bank app reviews.</b> <span>I predicted customer service would be the costliest theme. It ranked fifth; frozen or closed accounts ranked first by a wide margin.</span></li>
+      <li><b>Email test.</b> <span>I expected adjusting for past spend to tighten the estimates. It removed 0.04% of the variance, so I reported it and did not use it.</span></li>
+      <li><b>Scam losses.</b> <span>I predicted the break-even scam rate for bank transfers would be above 1% at today's loss share. At my base assumptions it is 0.72%.</span></li>
+      <li><b>Cookie Cats test.</b> <span>The experiment itself failed its randomization check, which a quick analysis would never have noticed.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <h2>Methods and tools</h2>
+    <p class="section-note">What the projects above actually use.</p>
+    <div class="toolbox">
+      <div><h3>Inference and experiments</h3><p>Randomized tests, sample-ratio checks, bootstrap intervals, multiple-comparison control, power, peeking simulations.</p></div>
+      <div><h3>Modeling</h3><p>Logistic and count regression, scorecards, gradient boosting, survival analysis, calibration, time-based validation.</p></div>
+      <div><h3>Monitoring and decisions</h3><p>Alert design with back-testing, break-even models, sensitivity and Monte-Carlo stress tests.</p></div>
+      <div><h3>Text and research</h3><p>Keyword topic models validated on held-out labels, review mining, prioritization frameworks.</p></div>
+      <div><h3>Tools</h3><p>Python (pandas, statsmodels, scikit-learn), SQL (DuckDB, SQLite), Jupyter, Streamlit, Git.</p></div>
+      <div><h3>Standards</h3><p>Plan first, predictions logged, limits stated, raw data and personal information kept out of public repos.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p><b>Contact.</b> Code, plans and case studies are on <a href="https://github.com/chinph">GitHub</a>.</p>
+    <!-- TODO before publishing: add LinkedIn and email links here -->
+    <p>Data used in these projects comes from public sources, and each repository states its license and limits.</p>
+  </div>
+</footer>
+
+</body>
+</html>
