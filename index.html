@@ -25,7 +25,7 @@
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Data analyst &middot; consumer behavior &middot; analytics &middot; visualization</p>
+    <p class="eyebrow">Data analyst &middot; consumer behavior &middot; data quality &middot; analytics &middot; visualization</p>
     <h1>I find out why people behave the way they do, and turn it into decisions you can defend.</h1>
     <p class="lede">I don't wait for a clean dataset. When the data a question needs doesn't exist, I collect it (app reviews, map data, numbers locked in government PDFs) and test it before I trust it. Each case study below starts with the problem, ends with a decision, and says what I got wrong along the way.</p>
     <div class="cta">
@@ -39,12 +39,22 @@
 <section id="about">
   <div class="wrap">
     <h2>What I bring</h2>
-    <p class="section-note">Three threads that run through the work, and where to see them.</p>
+    <p class="section-note">Five threads that run through the work, and where to see them.</p>
     <div class="pillars">
       <article class="pillar">
         <h3>Consumer behavior</h3>
         <p>Why customers leave, complain, respond to a campaign, or lose money to a scam. I read behavior from reviews, complaints, experiments and transactions.</p>
         <p class="proof">See: <a href="#wombloom">Wombloom</a>, <a href="#app-reviews">bank app reviews</a>, <a href="#olist">Olist</a>, <a href="#email">email test</a>, <a href="#cookie">Cookie Cats</a></p>
+      </article>
+      <article class="pillar">
+        <h3>Data quality first</h3>
+        <p>Before any analysis I check what the data can and cannot support: duplicates, incomplete records, how each row was collected, and whether a measure means what it claims. And I know when a "problem" isn't one.</p>
+        <p class="proof">See: 871 duplicate <a href="#credit">loan records</a>; same-day split baskets inflating <a href="#olist">retention</a>; incomplete recent <a href="#complaints">complaint weeks</a>; a failed <a href="#cookie">randomization check</a>; map data undercounting <a href="#hanoi">caf&eacute;s</a>; 6,562 identical rows in the <a href="#email">email test</a> that were real customers, so I kept them.</p>
+      </article>
+      <article class="pillar">
+        <h3>Fast, practical solution design</h3>
+        <p>When the obvious route is blocked, I design a workable one quickly and write it down: a different data source, a better measure, or a simple rule a team can run every week.</p>
+        <p class="proof">See: switching to <a href="#app-reviews">app reviews</a> when complaint text was unavailable; extracting <a href="#scams">fraud tables from PDFs</a>; an <a href="#complaints">alert rule</a> that doesn't go blind after a spike; a <a href="#scams">break-even model</a> teams fill with their own numbers; a one-day <a href="#hanoi">field test</a> as the go/no-go.</p>
       </article>
       <article class="pillar">
         <h3>Analytics that ends in a decision</h3>
@@ -456,11 +466,11 @@
     <h2>Methods and tools</h2>
     <div class="toolbox">
       <div><h3>Data collection</h3><p>Public APIs and feeds, polite web scraping, PDF table extraction, OpenStreetMap queries, privacy rules at ingestion.</p></div>
+      <div><h3>Data quality</h3><p>Integrity and completeness checks, deduplication, identity resolution, sample-ratio checks, validation against labeled samples, documented known gaps.</p></div>
       <div><h3>Consumer and text analysis</h3><p>Review mining, topic rules validated on held-out labels, retention and survival analysis, segmentation.</p></div>
       <div><h3>Inference and experiments</h3><p>A/B tests, sample-ratio checks, bootstrap intervals, multiple-comparison control, power and peeking.</p></div>
       <div><h3>Modeling and decisions</h3><p>Logistic and count regression, scorecards, gradient boosting, calibration, break-even and sensitivity analysis.</p></div>
-      <div><h3>Visualization</h3><p>matplotlib, Altair, Streamlit apps, color-blind-tested palettes.</p></div>
-      <div><h3>Tools</h3><p>Python (pandas, statsmodels, scikit-learn), SQL (DuckDB, SQLite), Jupyter, Git.</p></div>
+      <div><h3>Tools and visualization</h3><p>Python (pandas, statsmodels, scikit-learn), SQL (DuckDB, SQLite), Jupyter, Git; matplotlib, Altair and Streamlit apps with color-blind-tested palettes.</p></div>
     </div>
   </div>
 </section>
