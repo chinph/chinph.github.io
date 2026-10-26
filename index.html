@@ -13,10 +13,9 @@
   <div class="wrap">
     <a class="brand" href="#top">Chi Nguyen</a>
     <nav aria-label="Sections">
-      <a href="#work">Work</a>
-      <a href="#viz">Visualization</a>
-      <a href="#wrong">Where I was wrong</a>
-      <a href="#lessons">Lessons</a>
+      <a href="#about">How I work</a>
+      <a href="#work">Case studies</a>
+      <a href="#big-picture">The big picture</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -34,11 +33,6 @@
       <a class="btn ghost" href="https://www.linkedin.com/in/chinguyenphamhai/">LinkedIn</a>
       <a class="btn ghost" href="https://github.com/chinph">GitHub</a>
     </div>
-    <ul class="stats">
-      <li><b>9</b><span>case studies, each ending in a decision</span></li>
-      <li><b>4</b><span>built on data I collected or assembled myself</span></li>
-      <li><b>16,000+</b><span>app reviews and 15,000+ map points collected</span></li>
-    </ul>
   </div>
 </section>
 
@@ -60,7 +54,7 @@
       <article class="pillar">
         <h3>Visualization that makes the point</h3>
         <p>Charts that state their takeaway, show uncertainty, and use a palette I tested for color-blind readers.</p>
-        <p class="proof">See: <a href="#viz">how I design charts</a></p>
+        <p class="proof">See the "How I showed it" note under every chart.</p>
       </article>
     </div>
     <h3 class="sub">How I think</h3>
@@ -68,7 +62,7 @@
       <li><b>Start from the decision.</b> Who has to act, and what would change their mind? My recent projects begin with a written plan and predictions logged before I see the results.</li>
       <li><b>Distrust the data first.</b> Most wrong answers come from how data was collected, not from the model.</li>
       <li><b>Real is not the same as worth acting on.</b> A significant effect still needs a cost, a margin and a break-even point.</li>
-      <li><b>Say where it breaks.</b> Every case study ends with its limits, and I stress-test findings before reporting them.</li>
+      <li><b>Say where it breaks.</b> Every case study ends with a reflection: what I got wrong or where the answer is weak, and what I learned.</li>
     </ul>
   </div>
 </section>
@@ -76,15 +70,19 @@
 <section id="work">
   <div class="wrap">
     <h2>Case studies</h2>
-    <p class="section-note">For each one: the problem, how the data was built, what I found, and the thing a quicker analysis would have missed. Click any chart to enlarge it.</p>
+    <p class="section-note">Each one: the problem, how the data was built, what I found, and a reflection on what I got wrong and learned. Click any chart to enlarge it.</p>
 
     <div class="track">
       <h3 class="track-title">Built from scratch: data I collected or assembled myself</h3>
       <p class="track-note">No ready-made dataset existed for these questions, so I built one, then checked it before trusting it.</p>
 
+      <!-- Wombloom -->
       <article class="case featured" id="wombloom">
         <h3 class="case-title">What should my pregnancy-journal app build first?</h3>
-        <a class="case-chart zoomable" href="assets/wombloom.png"><img src="assets/wombloom.png" alt="Bar chart of stars gained or lost when a review mentions a topic; ads, updates and bugs lose the most" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/wombloom.png"><img src="assets/wombloom.png" alt="Bar chart of stars gained or lost when a review mentions a topic; ads, updates and bugs lose the most" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> stars gained or lost against the 4.16 average. Blue bars are topics whose rules passed validation and orange bars are leads, so the chart also says how far to trust each bar.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>I designed Wombloom, a private pregnancy journal for iPhone. Before deciding what to build first, I wanted evidence beyond my own experience: what do parents praise and complain about in the apps they already use?</p>
@@ -102,6 +100,19 @@
             <div class="links"><a href="https://wombloom-analysis-research.streamlit.app/">Interactive dashboard</a><a href="https://github.com/chinph/wombloom-product-research">Code and case study</a></div>
           </div>
         </div>
+        <div class="reflect">
+          <div class="reflect-box wrong">
+            <h4>Where I was wrong</h4>
+            <p><span class="label">I expected</span>My first version of the app to cover what parents need most.</p>
+            <p><span class="label">The data showed</span>It held up on trust (no ads, no account, no data collected) but entries live only on the phone, and complaints about lost data point to backup and export.</p>
+            <p class="changed"><span class="label">What I changed</span>Backup and export moved to the top of my build list.</p>
+          </div>
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>The priority model ranked my own favourite idea low.</p>
+            <p class="changed"><span class="label">Lesson</span>I didn't tune the model until it agreed. I kept the disagreement in the write-up and added a second lens, because a reader should see the tension too.</p>
+          </div>
+        </div>
         <div class="app-strip">
           <p class="label">The app I built</p>
           <div class="strip">
@@ -116,13 +127,17 @@
         </div>
       </article>
 
+      <!-- Bank app reviews -->
       <article class="case" id="app-reviews">
         <h3 class="case-title">What should a bank fix first in its mobile app?</h3>
-        <a class="case-chart zoomable" href="assets/app-reviews.png"><img src="assets/app-reviews.png" alt="Odds ratios for a low rating by review theme; frozen or closed accounts highest" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/app-reviews.png"><img src="assets/app-reviews.png" alt="Odds ratios for a low rating by review theme; frozen or closed accounts highest" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> odds ratios on a log scale with 95% intervals, sorted by size, so the costliest themes and how certain each one is read at a glance.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>Bank apps collect thousands of reviews. A digital product team needs to know which problems actually cost ratings, and whether fintech users complain about different things than bank customers.</p>
-            <p><span class="label">The data</span>8,350 recent reviews of 17 bank, card and fintech apps that I collected from Apple's public review feed. The complaint narratives I first planned to use turned out to be unavailable, so I changed the source, not the question.</p>
+            <p><span class="label">The data</span>8,350 recent reviews of 17 bank, card and fintech apps that I collected from Apple's public review feed.</p>
             <p class="caught"><span class="label">What I caught</span>Average rating measured how often each app prompts happy users, not its quality (0.99 correlation with its five-star share), so I compared only unhappy reviews.</p>
           </div>
           <div class="col">
@@ -136,15 +151,32 @@
             <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/app-reviews">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/app-reviews/research_plan.md">Research plan</a></div>
           </div>
         </div>
+        <div class="reflect">
+          <div class="reflect-box wrong">
+            <h4>Where I was wrong</h4>
+            <p><span class="label">I expected</span>Customer service to be the theme that costs the most stars.</p>
+            <p><span class="label">The data showed</span>It ranked fifth. Frozen or closed accounts cost the most, though they are rarely mentioned.</p>
+            <p class="changed"><span class="label">What I changed</span>I now measure how often a problem comes up and how much it costs as two separate questions.</p>
+          </div>
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>The complaint narratives I planned to use were unavailable, and my first keyword rules scored precision as low as 0.47 on a labeled validation sample.</p>
+            <p class="changed"><span class="label">Lesson</span>Change the route, not the question: I switched to app reviews, rewrote the rules from their errors, and scored them once on a fresh sample before trusting them.</p>
+          </div>
+        </div>
       </article>
 
+      <!-- Hanoi -->
       <article class="case" id="hanoi">
         <h3 class="case-title">Where should a caf&eacute; brand open next in Hanoi?</h3>
-        <a class="case-chart zoomable" href="assets/hanoi.png"><img src="assets/hanoi.png" alt="Bar chart of how often each Hanoi district ranks in the top three under random weightings" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/hanoi.png"><img src="assets/hanoi.png" alt="Bar chart of how often each Hanoi district ranks in the top three under random weightings" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> not a single score, but how often each district lands in the top three across 10,000 random weightings, so the chart shows how robust the ranking is.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>A caf&eacute; brand wants to know which district has the most unmet demand at a sensible rent. No dataset answers that.</p>
-            <p><span class="label">The data</span>I built one: 15,484 points of interest from OpenStreetMap, land prices scraped from a property listings site, and population from a pinned Wikipedia revision. Hanoi abolished its districts in July 2025, so I queried the historical map.</p>
+            <p><span class="label">The data</span>I built one: 15,484 points of interest from OpenStreetMap, land prices scraped from a property listings site, and population from a pinned Wikipedia revision.</p>
             <p class="caught"><span class="label">What I caught</span>OpenStreetMap appears to miss small independent caf&eacute;s outside the centre, so every supply gap is re-estimated on chain caf&eacute;s only.</p>
           </div>
           <div class="col">
@@ -158,11 +190,27 @@
             <div class="links"><a href="https://github.com/chinph/Hanoi-Vietnam-Market-Research">Code and case study</a></div>
           </div>
         </div>
+        <div class="reflect">
+          <div class="reflect-box wrong">
+            <h4>Where it breaks</h4>
+            <p><span class="label">The weak point</span>Thanh Xu&acirc;n's lead depends on the supply-gap signal. Drop it, and &#272;&#7889;ng &#272;a ranks first.</p>
+            <p class="changed"><span class="label">What I did</span>I said so up front and recommended a one-day field count of the shortlisted blocks as the go/no-go test.</p>
+          </div>
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>Hanoi had abolished its districts in July 2025, while land prices and population were still published by the old districts.</p>
+            <p class="changed"><span class="label">Lesson</span>I queried the historical map and pinned every source to a date, so the analysis can be rebuilt exactly.</p>
+          </div>
+        </div>
       </article>
 
+      <!-- Scams -->
       <article class="case" id="scams">
         <h3 class="case-title">Where do scam losses concentrate, and where should a bank add friction?</h3>
-        <a class="case-chart zoomable" href="assets/scam-losses.png"><img src="assets/scam-losses.png" alt="Bar chart of the break-even scam rate by payment type under three assumptions about who bears the loss" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/scam-losses.png"><img src="assets/scam-losses.png" alt="Bar chart of the break-even scam rate by payment type under three assumptions about who bears the loss" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> one bar per assumption about who bears the loss, on a log scale, so the reader sees how much the answer depends on that assumption.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>Every check a bank adds to a payment annoys honest customers. A fraud team needs to know where friction prevents enough losses to be worth it.</p>
@@ -180,15 +228,32 @@
             <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/scams">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/scams/research_plan.md">Research plan</a></div>
           </div>
         </div>
+        <div class="reflect">
+          <div class="reflect-box wrong">
+            <h4>Where I was wrong</h4>
+            <p><span class="label">I expected</span>Friction on bank transfers to break even only above a 1% scam rate, given how rarely banks refund today.</p>
+            <p><span class="label">The data showed</span>At my base assumptions it breaks even at 0.72%, so friction pays off sooner than I thought.</p>
+            <p class="changed"><span class="label">What I changed</span>I report the break-even across a range of costs and effectiveness, so a fraud team can plug in its own numbers.</p>
+          </div>
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>The data existed only as PDFs, and the payment-method tables give totals but no medians.</p>
+            <p class="changed"><span class="label">Lesson</span>I extracted the tables and checked them against the PDF text, and where a median was missing I used loss per report and said so, rather than inventing precision.</p>
+          </div>
+        </div>
       </article>
     </div>
 
     <div class="track">
       <h3 class="track-title">Customer behavior and experiments</h3>
 
+      <!-- Email test -->
       <article class="case compact" id="email">
         <h3 class="case-title">Does a marketing email change what customers do, and is it worth the cost?</h3>
-        <a class="case-chart zoomable" href="assets/email-test.png"><img src="assets/email-test.png" alt="Effects of two emails on visits, conversions and spend, with confidence intervals" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/email-test.png"><img src="assets/email-test.png" alt="Effects of two emails on visits, conversions and spend, with confidence intervals" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> one small panel per metric, each on its own scale with 95% intervals, so the small effect on conversion isn't flattened by the larger one on visits.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>A retailer tested two emails on 64,000 customers. Marketing needs to know which to send, if either.</p>
@@ -202,11 +267,28 @@
             </ul></div>
           </div>
         </div>
+        <div class="reflect">
+          <div class="reflect-box wrong">
+            <h4>Where I was wrong</h4>
+            <p><span class="label">I expected</span>Adjusting for customers' past spend to sharpen the estimates.</p>
+            <p><span class="label">The data showed</span>It removed 0.04% of the noise, because past spend barely predicts a rare two-week purchase.</p>
+            <p class="changed"><span class="label">What I changed</span>I check whether a technique's assumption holds before relying on it, and report it either way.</p>
+          </div>
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>Both emails had statistically real effects, which made both tempting to recommend.</p>
+            <p class="changed"><span class="label">Lesson</span>A result is not a decision until it has a price: after margin and sending cost, only one email clearly pays.</p>
+          </div>
+        </div>
       </article>
 
+      <!-- Cookie Cats -->
       <article class="case compact" id="cookie">
         <h3 class="case-title">Does moving a game's paywall gate later keep more players?</h3>
-        <a class="case-chart zoomable" href="assets/cookie-cats.png"><img src="assets/cookie-cats.png" alt="Change in 1-day and 7-day retention with confidence intervals" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/cookie-cats.png"><img src="assets/cookie-cats.png" alt="Change in 1-day and 7-day retention with confidence intervals" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> the effect and its interval rather than two retention bars. The 7-day interval stays below zero; the 1-day one crosses it.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>A mobile game makes players wait or pay at a "gate". The team tested moving it from level 30 to level 40.</p>
@@ -216,15 +298,32 @@
             <div class="insights"><span class="label">What I found</span><ul>
               <li><b>Most players leave before any gate:</b> only about a third reach level 30.</li>
               <li><b>Moving it hurts:</b> 7-day retention falls 0.8 points; keep the gate at 30.</li>
-              <li>The test <b>failed its own randomization check</b>; the conclusion survives the worst case.</li>
+              <li><b>The result is solid</b> even though the test had a flaw (below).</li>
             </ul></div>
+          </div>
+        </div>
+        <div class="reflect">
+          <div class="reflect-box wrong">
+            <h4>Where I was wrong</h4>
+            <p><span class="label">I expected</span>The experiment's random split to be clean.</p>
+            <p><span class="label">The data showed</span>It failed its sample-ratio check: 789 more players in one group.</p>
+            <p class="changed"><span class="label">What I changed</span>I re-ran the result under the worst case for that imbalance (still 0.66 points lower) and flagged the cause for the team to find.</p>
+          </div>
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>Only about a third of players ever reach the gate, so its effect is diluted across everyone in the test.</p>
+            <p class="changed"><span class="label">Lesson</span>Check the experiment before reading its result, and say who the effect actually applies to.</p>
           </div>
         </div>
       </article>
 
+      <!-- Olist -->
       <article class="case compact" id="olist">
         <h3 class="case-title">Why don't marketplace customers come back?</h3>
-        <a class="case-chart zoomable" href="assets/olist.png"><img src="assets/olist.png" alt="Share of negative reviews by days delivered after the promised date" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/olist.png"><img src="assets/olist.png" alt="Share of negative reviews by days delivered after the promised date" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> one point per day early or late, with an interval for each, so the jump at the promised date can't be missed.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>Olist, a Brazilian marketplace, sees few repeat buyers. Is late delivery the reason, and what should it fix first?</p>
@@ -238,18 +337,30 @@
             </ul></div>
           </div>
         </div>
+        <div class="reflect single">
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>Split baskets made customers look loyal, and a standard RFM segmentation quietly split identical customers into different segments.</p>
+            <p class="changed"><span class="label">Lesson</span>Before segmenting or counting repeat customers, I check what the data's structure does to the measure.</p>
+          </div>
+        </div>
       </article>
     </div>
 
     <div class="track">
       <h3 class="track-title">Risk and monitoring in banking</h3>
 
+      <!-- Credit -->
       <article class="case compact" id="credit">
         <h3 class="case-title">Which loan applicants should a lender approve?</h3>
-        <a class="case-chart zoomable" href="assets/credit-risk.png"><img src="assets/credit-risk.png" alt="Profit against the share of loans approved for three scoring approaches" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/credit-risk.png"><img src="assets/credit-risk.png" alt="Profit against the share of loans approved for three scoring approaches" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> profit against the share of loans approved for three models, with the scorecard's best point marked, rather than an accuracy table a lender can't act on.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>A bad loan loses far more than a good loan earns, so the approval cut-off is a cost decision, not an accuracy contest.</p>
+            <p class="caught"><span class="label">What I caught</span>Counting young loans as "good" made recent loans look risk-free, so only loans with a full 12-month window are used.</p>
             <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/credit-risk">Code and case study</a></div>
           </div>
           <div class="col">
@@ -260,11 +371,28 @@
             </ul></div>
           </div>
         </div>
+        <div class="reflect">
+          <div class="reflect-box wrong">
+            <h4>Where I was wrong</h4>
+            <p><span class="label">I expected</span>The lending platform's own score to be about as good as anything I built.</p>
+            <p><span class="label">The data showed</span>My scorecard ranked risk better, by 0.064 AUC.</p>
+            <p class="changed"><span class="label">What I changed</span>I treat an existing model as a benchmark to test, not a ceiling to assume.</p>
+          </div>
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>A boosted model scored slightly higher, and a version given post-loan fields scored 0.99 by reading the outcome.</p>
+            <p class="changed"><span class="label">Lesson</span>Ask what each field could have known at decision time, and prefer the explainable model when the extra accuracy isn't real.</p>
+          </div>
+        </div>
       </article>
 
+      <!-- Complaints -->
       <article class="case compact" id="complaints">
         <h3 class="case-title">Which customer complaints need attention this week?</h3>
-        <a class="case-chart zoomable" href="assets/complaint-monitor.png"><img src="assets/complaint-monitor.png" alt="Complaints and three alert thresholds after a huge spike" loading="lazy"></a>
+        <figure class="case-figure">
+          <a class="case-chart zoomable" href="assets/complaint-monitor.png"><img src="assets/complaint-monitor.png" alt="Complaints and three alert thresholds after a huge spike" loading="lazy"></a>
+          <figcaption><b>How I showed it:</b> each rule's alert threshold drawn over the actual complaints on a log scale, which makes the textbook rule's blind weeks visible.</figcaption>
+        </figure>
         <div class="case-body">
           <div class="col">
             <p><span class="label">The problem</span>A complaint team can review only a handful of issues a week. Which surges deserve it, and can the alert rule be trusted?</p>
@@ -278,118 +406,47 @@
             </ul></div>
           </div>
         </div>
+        <div class="reflect">
+          <div class="reflect-box wrong">
+            <h4>Where I was wrong</h4>
+            <p><span class="label">I expected</span>A robust alert rule to shrug off one huge spike.</p>
+            <p><span class="label">The data showed</span>It was partly blinded for months, needing 3 to 5 times the new normal to alert.</p>
+            <p class="changed"><span class="label">What I changed</span>I built an alert-aware baseline that caps flagged weeks, and it held up.</p>
+          </div>
+          <div class="reflect-box lesson">
+            <h4>Challenge and lesson</h4>
+            <p><span class="label">Challenge</span>The newest two weeks in the data were incomplete, and 114 of 250 complaint streams were too small to monitor on their own.</p>
+            <p class="changed"><span class="label">Lesson</span>Monitor only complete data, and roll small streams up rather than pretend they can be watched individually.</p>
+          </div>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
-<section id="viz">
+<section id="big-picture" class="big-picture">
   <div class="wrap">
-    <h2>How I design charts</h2>
-    <p class="section-note">A chart is an argument. These are the rules I hold mine to, with examples from the case studies.</p>
-    <ul class="habits">
-      <li><b>Titles state the takeaway</b> wherever they can, not just the variables.</li>
-      <li><b>Color has a job.</b> Deep blue for the result, lighter blue for alternatives, gray for benchmarks, orange only for the problem. The palette is tested for color-blind readers and contrast.</li>
-      <li><b>Uncertainty is shown wherever it matters:</b> intervals, bands or ranges rather than a bare point.</li>
-      <li><b>One axis per chart.</b> Two measures on two scales invent a relationship, so they get two charts.</li>
-    </ul>
-    <div class="gallery">
-      <figure>
-        <a class="zoomable" href="assets/viz-censoring.png"><img src="assets/viz-censoring.png" alt="Two lines comparing a naive and a corrected bad-loan rate over time" loading="lazy"></a>
-        <figcaption><b>Showing a trap, not just a result.</b> Two definitions on one axis make it obvious that recent loans only look safe because they are young.</figcaption>
-      </figure>
-      <figure>
-        <a class="zoomable" href="assets/viz-uncertainty.png"><img src="assets/viz-uncertainty.png" alt="Ranks of product actions with ranges across 5,000 random weightings" loading="lazy"></a>
-        <figcaption><b>Making a ranking honest.</b> Each dot is a rank and each bar its range across 5,000 random weightings; orange marks evidence that is a lead, not a measurement.</figcaption>
-      </figure>
-      <figure>
-        <a class="zoomable" href="assets/viz-funnel.png"><img src="assets/viz-funnel.png" alt="Funnel plot of companies' refund rates against the number of complaints" loading="lazy"></a>
-        <figcaption><b>Separating signal from chance.</b> The shaded band is what chance alone would produce, so only companies outside it are called different.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section id="wrong">
-  <div class="wrap">
-    <h2>Where I was wrong</h2>
-    <p class="section-note">I write predictions down before analyzing, then score them. These are the misses, what the data showed instead, and what I changed because of it.</p>
-    <div class="wrong-grid">
-      <article class="wrong-item">
-        <h3>Credit risk</h3>
-        <p><span class="label">I expected</span>The lending platform's own score to be about as good as anything I built.</p>
-        <p><span class="label">The data showed</span>My scorecard ranked risk better, by 0.064 AUC.</p>
-        <p class="changed"><span class="label">What I took from it</span>An existing model is a benchmark to test, not a ceiling to assume.</p>
+    <h2>The big picture</h2>
+    <p class="section-note">Nine projects across banking, retail, consumer apps and a caf&eacute; chain, and one recurring lesson: the number people look at first is rarely the one that decides the outcome.</p>
+    <div class="patterns">
+      <article class="pattern">
+        <h3>Rare, severe experiences drive outcomes</h3>
+        <p>Frozen accounts appear in 3% of unhappy bank reviews but cost the most stars. 12.6% of scam loss reports hold most of the money lost. A late delivery takes negative reviews from about 10% to about 80%.</p>
+        <p class="so"><b>So:</b> watch the tail, not the average.</p>
       </article>
-      <article class="wrong-item">
-        <h3>Bank app reviews</h3>
-        <p><span class="label">I expected</span>Customer service to be the theme that costs the most stars.</p>
-        <p><span class="label">The data showed</span>It ranked fifth. Frozen or closed accounts cost the most, though they are rarely mentioned.</p>
-        <p class="changed"><span class="label">What I took from it</span>The loudest complaint is not always the costliest; I now measure frequency and cost separately.</p>
+      <article class="pattern">
+        <h3>Trust is the product</h3>
+        <p>Ads, updates and bugs cost pregnancy apps the most stars. Login and bugs dominate unhappy bank reviews. Fintech users write about frozen accounts and fraud.</p>
+        <p class="so"><b>So:</b> reliability and fair treatment come before new features.</p>
       </article>
-      <article class="wrong-item">
-        <h3>Bank app reviews, my own tagger</h3>
-        <p><span class="label">I expected</span>Simple keyword rules to label review topics accurately.</p>
-        <p><span class="label">The data showed</span>Scored against a labeled validation sample, precision was as low as 0.47 for some topics.</p>
-        <p class="changed"><span class="label">What I took from it</span>I rewrote the rules from the errors, then scored them once on a fresh sample before using them.</p>
-      </article>
-      <article class="wrong-item">
-        <h3>Complaint monitor</h3>
-        <p><span class="label">I expected</span>A robust alert rule to shrug off one huge spike.</p>
-        <p><span class="label">The data showed</span>It was partly blinded for months, needing 3 to 5 times the new normal to alert.</p>
-        <p class="changed"><span class="label">What I took from it</span>I built an alert-aware baseline that caps flagged weeks, and it held up.</p>
-      </article>
-      <article class="wrong-item">
-        <h3>Email test</h3>
-        <p><span class="label">I expected</span>Adjusting for customers' past spend to sharpen the estimates.</p>
-        <p><span class="label">The data showed</span>It removed 0.04% of the noise, because past spend barely predicts a rare two-week purchase.</p>
-        <p class="changed"><span class="label">What I took from it</span>A technique only helps when its assumption holds, so I check first and report it either way.</p>
-      </article>
-      <article class="wrong-item">
-        <h3>Cookie Cats test</h3>
-        <p><span class="label">I expected</span>The experiment's random split to be clean.</p>
-        <p><span class="label">The data showed</span>It failed its sample-ratio check: 789 more players in one group.</p>
-        <p class="changed"><span class="label">What I took from it</span>Check the experiment before reading its result, and test whether the conclusion survives the worst case.</p>
+      <article class="pattern">
+        <h3>Averages and defaults mislead</h3>
+        <p>Average app ratings measured how often apps ask for them. "Repeat" customers were split baskets. Recent loans looked safe only because they were young. The typical scam loss is $497; the average is 25 times that.</p>
+        <p class="so"><b>So:</b> ask how a number was produced before reading it.</p>
       </article>
     </div>
-  </div>
-</section>
-
-<section id="lessons">
-  <div class="wrap">
-    <h2>Challenges and lessons</h2>
-    <p class="section-note">What was hard across these projects, and how it changed the way I work.</p>
-    <div class="lessons">
-      <article class="lesson">
-        <h3>When the data doesn't exist, build it, then test it like a stranger built it</h3>
-        <p><span class="label">Challenge</span>Self-collected data has no documentation and no one else's checks. My first topic rules and an off-the-shelf sentiment model both looked fine until I checked them against star ratings and labeled validation samples.</p>
-        <p class="changed"><span class="label">Lesson</span>I validate every measuring tool on held-out data and keep only what passes, as with 7 of 19 Wombloom topics.</p>
-      </article>
-      <article class="lesson">
-        <h3>Ask what the collection process did to the data</h3>
-        <p><span class="label">Challenge</span>The traps were in how data arrived: 500 recent reviews covering 3 days for one app and 282 for another, loans too young to have defaulted, the newest complaints not yet published, same-day split baskets counted as loyal customers.</p>
-        <p class="changed"><span class="label">Lesson</span>Before any analysis I ask how each row got into the data and what is missing because of it.</p>
-      </article>
-      <article class="lesson">
-        <h3>When a source is blocked, change the route, not the question</h3>
-        <p><span class="label">Challenge</span>Complaint narratives were unavailable, fraud data existed only as PDFs, and Hanoi's districts had been abolished while prices and population were still published by the old districts.</p>
-        <p class="changed"><span class="label">Lesson</span>I moved to app reviews, extracted the PDF tables, and queried the historical map, and I documented each workaround so it can be checked.</p>
-      </article>
-      <article class="lesson">
-        <h3>A result is not a decision until it has a price</h3>
-        <p><span class="label">Challenge</span>Both emails had statistically real effects, and a boosted credit model scored slightly higher than my scorecard. Each was tempting to recommend on that alone.</p>
-        <p class="changed"><span class="label">Lesson</span>I translate effects into money with the assumptions written down, and show how the answer moves when those assumptions change.</p>
-      </article>
-      <article class="lesson">
-        <h3>Charts can mislead, mine included</h3>
-        <p><span class="label">Challenge</span>I shipped a dual-axis chart, and I nearly ranked bank apps by average rating, which would have measured how often each app asks happy users to rate, not its quality.</p>
-        <p class="changed"><span class="label">Lesson</span>I review every chart against a checklist and ask what a skeptical reader would wrongly conclude from it.</p>
-      </article>
-      <article class="lesson">
-        <h3>Keep the disagreement visible</h3>
-        <p><span class="label">Challenge</span>In Wombloom, the priority model ranked my own favourite idea low.</p>
-        <p class="changed"><span class="label">Lesson</span>I didn't tune the model until it agreed. I kept the disagreement in the write-up and added a second lens, because a reader should see the tension too.</p>
-      </article>
+    <div class="closing">
+      <p>What this means for a team: bring me a decision and messy, incomplete data. I'll find or build the data it needs, check it before trusting it, put a price on the answer, and tell you plainly where it could be wrong.</p>
     </div>
   </div>
 </section>
