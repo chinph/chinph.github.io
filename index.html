@@ -76,176 +76,209 @@
 <section id="work">
   <div class="wrap">
     <h2>Case studies</h2>
-    <p class="section-note">For each one: the problem, how the data was built, what I found, and the thing a quicker analysis would have missed.</p>
+    <p class="section-note">For each one: the problem, how the data was built, what I found, and the thing a quicker analysis would have missed. Click any chart to enlarge it.</p>
 
     <div class="track">
       <h3 class="track-title">Built from scratch: data I collected or assembled myself</h3>
       <p class="track-note">No ready-made dataset existed for these questions, so I built one, then checked it before trusting it.</p>
 
       <article class="case featured" id="wombloom">
-        <div class="case-text">
-          <div class="badges"><span class="badge own">Data I collected</span><span class="badge">Consumer behavior</span><span class="badge">My own product</span></div>
-          <h3>What should my pregnancy-journal app build first?</h3>
-          <p class="context"><span class="label">The problem</span>I designed Wombloom, a private pregnancy journal for iPhone. Before deciding what to build first, I wanted evidence beyond my own experience: what do parents praise and complain about in the apps they already use?</p>
-          <p class="data"><span class="label">The data</span>7,955 App Store reviews of 10 competing apps, collected through Apple's public feeds with a documented method for choosing competitors. Reviewer names and IDs were never stored.</p>
-          <div class="insights"><span class="label">What I found</span>
-            <ul>
-              <li><b>Trust problems cost the most.</b> Reviews that mention ads, updates or bugs average 2.4 to 2.6 stars, against 4.16 overall.</li>
-              <li><b>Pricing is the most discussed pain point:</b> 20% of reviews mention it, and 36.5% of those are 1 or 2 stars.</li>
-              <li><b>Journaling is the clearest opening, but a thin one:</b> reviews of journal-style apps talk about memories about 9 times as often, mostly for two apps.</li>
-            </ul>
+        <h3 class="case-title">What should my pregnancy-journal app build first?</h3>
+        <a class="case-chart zoomable" href="assets/wombloom.png"><img src="assets/wombloom.png" alt="Bar chart of stars gained or lost when a review mentions a topic; ads, updates and bugs lose the most" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>I designed Wombloom, a private pregnancy journal for iPhone. Before deciding what to build first, I wanted evidence beyond my own experience: what do parents praise and complain about in the apps they already use?</p>
+            <p><span class="label">The data</span>7,955 App Store reviews of 10 competing apps, collected through Apple's public feeds with a documented method for choosing competitors. Reviewer names and IDs were never stored.</p>
+            <p class="caught"><span class="label">What I caught</span>An off-the-shelf sentiment model called only 44% of 1 and 2 star reviews negative, so I built topic rules and tested them on held-out reviews. Only 7 of 19 topics passed, and only those count as measurements.</p>
           </div>
-          <p class="caught"><span class="label">What I caught</span>An off-the-shelf sentiment model called only 44% of 1 and 2 star reviews negative, so I built topic rules and tested them on held-out reviews. Only 7 of 19 topics passed, and only those count as measurements.</p>
-          <div class="links"><a href="https://wombloom-analysis-research.streamlit.app/">Interactive dashboard</a><a href="https://github.com/chinph/wombloom-product-research">Code and case study</a></div>
+          <div class="col">
+            <div class="insights"><span class="label">What I found</span>
+              <ul>
+                <li><b>Trust problems cost the most.</b> Reviews that mention ads, updates or bugs average 2.4 to 2.6 stars, against 4.16 overall.</li>
+                <li><b>Pricing is the most discussed pain point:</b> 20% of reviews mention it, and 36.5% of those are 1 or 2 stars.</li>
+                <li><b>Journaling is the clearest opening, but a thin one:</b> reviews of journal-style apps talk about memories about 9 times as often, mostly for two apps.</li>
+              </ul>
+            </div>
+            <div class="links"><a href="https://wombloom-analysis-research.streamlit.app/">Interactive dashboard</a><a href="https://github.com/chinph/wombloom-product-research">Code and case study</a></div>
+          </div>
         </div>
-        <div class="case-fig"><a href="assets/wombloom.png" target="_blank" rel="noopener"><img src="assets/wombloom.png" alt="Bar chart of stars gained or lost when a review mentions a topic; ads, updates and bugs lose the most" loading="lazy"><span class="zoom">Open full-size chart</span></a></div>
+        <div class="app-strip">
+          <p class="label">The app I built</p>
+          <div class="strip">
+            <a class="zoomable" href="assets/wombloom-app/wombloom-01.jpg"><img src="assets/wombloom-app/wombloom-01.jpg" alt="Wombloom home screens, during pregnancy and after birth" loading="lazy"></a>
+            <a class="zoomable" href="assets/wombloom-app/wombloom-02.jpg"><img src="assets/wombloom-app/wombloom-02.jpg" alt="Profile setup with baby's details, family role and notebook styles" loading="lazy"></a>
+            <a class="zoomable" href="assets/wombloom-app/wombloom-03.jpg"><img src="assets/wombloom-app/wombloom-03.jpg" alt="Due-date countdown, baby size and prenatal checkup guide" loading="lazy"></a>
+            <a class="zoomable" href="assets/wombloom-app/wombloom-04.jpg"><img src="assets/wombloom-app/wombloom-04.jpg" alt="Shopping tracker with budget, categories and wishlist" loading="lazy"></a>
+            <a class="zoomable" href="assets/wombloom-app/wombloom-05.jpg"><img src="assets/wombloom-app/wombloom-05.jpg" alt="Logging feeds, sleep and other activities in a few taps" loading="lazy"></a>
+            <a class="zoomable" href="assets/wombloom-app/wombloom-07.jpg"><img src="assets/wombloom-app/wombloom-07.jpg" alt="Weight chart and the one-tap add menu" loading="lazy"></a>
+          </div>
+          <p class="strip-note">Research findings in practice: no ads, no account, and nothing leaves the phone. Scroll sideways for more screens.</p>
+        </div>
       </article>
 
       <article class="case" id="app-reviews">
-        <div class="case-text">
-          <div class="badges"><span class="badge own">Data I collected</span><span class="badge">Consumer behavior</span><span class="badge">Banking</span></div>
-          <h3>What should a bank fix first in its mobile app?</h3>
-          <p class="context"><span class="label">The problem</span>Bank apps collect thousands of reviews. A digital product team needs to know which problems actually cost ratings, and whether fintech users complain about different things than bank customers.</p>
-          <p class="data"><span class="label">The data</span>8,350 recent reviews of 17 bank, card and fintech apps that I collected from Apple's public review feed. The complaint narratives I first planned to use turned out to be unavailable, so I changed the source, not the question.</p>
-          <div class="insights"><span class="label">What I found</span>
-            <ul>
-              <li><b>Unhappy users write about the app working:</b> 37% of 1 and 2 star bank reviews mention login or bugs.</li>
-              <li><b>Common is not the same as costly.</b> Redesigns are the most talked-about theme but the weakest link to a low rating; frozen or closed accounts are rare at banks (3%) but the costliest (odds ratio 12.8).</li>
-              <li><b>Fintech users have a different problem:</b> they mention frozen accounts 2.7 times and fraud 3.5 times as often as bank customers.</li>
-            </ul>
+        <h3 class="case-title">What should a bank fix first in its mobile app?</h3>
+        <a class="case-chart zoomable" href="assets/app-reviews.png"><img src="assets/app-reviews.png" alt="Odds ratios for a low rating by review theme; frozen or closed accounts highest" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>Bank apps collect thousands of reviews. A digital product team needs to know which problems actually cost ratings, and whether fintech users complain about different things than bank customers.</p>
+            <p><span class="label">The data</span>8,350 recent reviews of 17 bank, card and fintech apps that I collected from Apple's public review feed. The complaint narratives I first planned to use turned out to be unavailable, so I changed the source, not the question.</p>
+            <p class="caught"><span class="label">What I caught</span>Average rating measured how often each app prompts happy users, not its quality (0.99 correlation with its five-star share), so I compared only unhappy reviews.</p>
           </div>
-          <p class="caught"><span class="label">What I caught</span>Average rating measured how often each app prompts happy users, not its quality (0.99 correlation with its five-star share), so I compared only unhappy reviews.</p>
-          <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/app-reviews">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/app-reviews/research_plan.md">Research plan</a></div>
+          <div class="col">
+            <div class="insights"><span class="label">What I found</span>
+              <ul>
+                <li><b>Unhappy users write about the app working:</b> 37% of 1 and 2 star bank reviews mention login or bugs.</li>
+                <li><b>Common is not the same as costly.</b> Redesigns are the most talked-about theme but the weakest link to a low rating; frozen or closed accounts are rare at banks (3%) but the costliest (odds ratio 12.8).</li>
+                <li><b>Fintech users have a different problem:</b> they mention frozen accounts 2.7 times and fraud 3.5 times as often as bank customers.</li>
+              </ul>
+            </div>
+            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/app-reviews">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/app-reviews/research_plan.md">Research plan</a></div>
+          </div>
         </div>
-        <div class="case-fig"><a href="assets/app-reviews.png" target="_blank" rel="noopener"><img src="assets/app-reviews.png" alt="Odds ratios for a low rating by review theme; frozen or closed accounts highest" loading="lazy"><span class="zoom">Open full-size chart</span></a></div>
       </article>
 
       <article class="case" id="hanoi">
-        <div class="case-text">
-          <div class="badges"><span class="badge own">Data I assembled</span><span class="badge">Consumer demand</span><span class="badge">Location strategy</span></div>
-          <h3>Where should a caf&eacute; brand open next in Hanoi?</h3>
-          <p class="context"><span class="label">The problem</span>A caf&eacute; brand wants to know which district has the most unmet demand at a sensible rent. No dataset answers that.</p>
-          <p class="data"><span class="label">The data</span>I built one: 15,484 points of interest from OpenStreetMap, land prices scraped from a property listings site, and population from a pinned Wikipedia revision. Hanoi abolished its districts in July 2025, so I queried the historical map.</p>
-          <div class="insights"><span class="label">What I found</span>
-            <ul>
-              <li><b>The market is concentrated:</b> Ho&agrave;n Ki&#7871;m has 2% of residents but 28% of mapped caf&eacute;s.</li>
-              <li><b>The biggest gap is Thanh Xu&acirc;n:</b> 31 mapped caf&eacute;s where its demand predicts about 123, on land about 20% cheaper.</li>
-              <li><b>The answer is robust:</b> first in 80% of 10,000 random weightings, top three in 90%.</li>
-            </ul>
+        <h3 class="case-title">Where should a caf&eacute; brand open next in Hanoi?</h3>
+        <a class="case-chart zoomable" href="assets/hanoi.png"><img src="assets/hanoi.png" alt="Bar chart of how often each Hanoi district ranks in the top three under random weightings" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>A caf&eacute; brand wants to know which district has the most unmet demand at a sensible rent. No dataset answers that.</p>
+            <p><span class="label">The data</span>I built one: 15,484 points of interest from OpenStreetMap, land prices scraped from a property listings site, and population from a pinned Wikipedia revision. Hanoi abolished its districts in July 2025, so I queried the historical map.</p>
+            <p class="caught"><span class="label">What I caught</span>OpenStreetMap appears to miss small independent caf&eacute;s outside the centre, so every supply gap is re-estimated on chain caf&eacute;s only.</p>
           </div>
-          <p class="caught"><span class="label">What I caught</span>OpenStreetMap appears to miss small independent caf&eacute;s outside the centre, so every supply gap is re-estimated on chain caf&eacute;s only.</p>
-          <div class="links"><a href="https://github.com/chinph/Hanoi-Vietnam-Market-Research">Code and case study</a></div>
+          <div class="col">
+            <div class="insights"><span class="label">What I found</span>
+              <ul>
+                <li><b>The market is concentrated:</b> Ho&agrave;n Ki&#7871;m has 2% of residents but 28% of mapped caf&eacute;s.</li>
+                <li><b>The biggest gap is Thanh Xu&acirc;n:</b> 31 mapped caf&eacute;s where its demand predicts about 123, on land about 20% cheaper.</li>
+                <li><b>The answer is robust:</b> first in 80% of 10,000 random weightings, top three in 90%.</li>
+              </ul>
+            </div>
+            <div class="links"><a href="https://github.com/chinph/Hanoi-Vietnam-Market-Research">Code and case study</a></div>
+          </div>
         </div>
-        <div class="case-fig"><a href="assets/hanoi.png" target="_blank" rel="noopener"><img src="assets/hanoi.png" alt="Bar chart of how often each Hanoi district ranks in the top three under random weightings" loading="lazy"><span class="zoom">Open full-size chart</span></a></div>
       </article>
 
       <article class="case" id="scams">
-        <div class="case-text">
-          <div class="badges"><span class="badge own">Data I assembled</span><span class="badge">Fraud</span><span class="badge">Banking</span></div>
-          <h3>Where do scam losses concentrate, and where should a bank add friction?</h3>
-          <p class="context"><span class="label">The problem</span>Every check a bank adds to a payment annoys honest customers. A fraud team needs to know where friction prevents enough losses to be worth it.</p>
-          <p class="data"><span class="label">The data</span>The Federal Trade Commission publishes its fraud figures only as PDF reports, so I extracted six years of tables (2019 to 2024) and combined them with 31,959 scam complaints filed with the CFPB and Census population data.</p>
-          <div class="insights"><span class="label">What I found</span>
-            <ul>
-              <li><b>A few large losses are most of the money:</b> 12.6% of loss reports hold at least 87.6% of the dollars, while the median loss is $497.</li>
-              <li><b>Bank transfers and crypto dominate:</b> about $44,000 lost per bank-transfer report, 17 times a credit-card report.</li>
-              <li><b>Who bears the loss decides everything:</b> only 6.3% of scam complaints end in a refund, and if banks reimbursed, friction would pay off at a scam rate 16 times lower.</li>
-            </ul>
+        <h3 class="case-title">Where do scam losses concentrate, and where should a bank add friction?</h3>
+        <a class="case-chart zoomable" href="assets/scam-losses.png"><img src="assets/scam-losses.png" alt="Bar chart of the break-even scam rate by payment type under three assumptions about who bears the loss" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>Every check a bank adds to a payment annoys honest customers. A fraud team needs to know where friction prevents enough losses to be worth it.</p>
+            <p><span class="label">The data</span>The Federal Trade Commission publishes its fraud figures only as PDF reports, so I extracted six years of tables (2019 to 2024) and combined them with 31,959 scam complaints filed with the CFPB and Census population data.</p>
+            <p class="caught"><span class="label">What I caught</span>My first trend chart put two measures on two y-axes, which invents a relationship, so I split it into three small charts.</p>
           </div>
-          <p class="caught"><span class="label">What I caught</span>My first trend chart put two measures on two y-axes, which invents a relationship, so I split it into three small charts.</p>
-          <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/scams">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/scams/research_plan.md">Research plan</a></div>
+          <div class="col">
+            <div class="insights"><span class="label">What I found</span>
+              <ul>
+                <li><b>A few large losses are most of the money:</b> 12.6% of loss reports hold at least 87.6% of the dollars, while the median loss is $497.</li>
+                <li><b>Bank transfers and crypto dominate:</b> about $44,000 lost per bank-transfer report, 17 times a credit-card report.</li>
+                <li><b>Who bears the loss decides everything:</b> only 6.3% of scam complaints end in a refund, and if banks reimbursed, friction would pay off at a scam rate 16 times lower.</li>
+              </ul>
+            </div>
+            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/scams">Code and case study</a><a href="https://github.com/chinph/us-bank-analytics/blob/main/scams/research_plan.md">Research plan</a></div>
+          </div>
         </div>
-        <div class="case-fig"><a href="assets/scam-losses.png" target="_blank" rel="noopener"><img src="assets/scam-losses.png" alt="Bar chart of the break-even scam rate by payment type under three assumptions about who bears the loss" loading="lazy"><span class="zoom">Open full-size chart</span></a></div>
       </article>
     </div>
 
     <div class="track">
       <h3 class="track-title">Customer behavior and experiments</h3>
-      <div class="cards">
 
-        <article class="card" id="email">
-          <div class="fig"><img src="assets/email-test.png" alt="Effects of two emails on visits, conversions and spend, with confidence intervals" loading="lazy"></div>
-          <div class="body">
-            <div class="badges"><span class="badge">Randomized experiment</span><span class="badge">Public dataset</span></div>
-            <h3>Does a marketing email change what customers do, and is it worth the cost?</h3>
-            <p class="context"><span class="label">The problem</span>A retailer tested two emails on 64,000 customers. Marketing needs to know which to send, if either.</p>
+      <article class="case compact" id="email">
+        <h3 class="case-title">Does a marketing email change what customers do, and is it worth the cost?</h3>
+        <a class="case-chart zoomable" href="assets/email-test.png"><img src="assets/email-test.png" alt="Effects of two emails on visits, conversions and spend, with confidence intervals" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>A retailer tested two emails on 64,000 customers. Marketing needs to know which to send, if either.</p>
+            <div class="links"><a href="https://email-test-ecommerce.streamlit.app">Live app</a><a href="https://github.com/chinph/ecommerce-ab-testing">Code and case study</a></div>
+          </div>
+          <div class="col">
             <div class="insights"><span class="label">What I found</span><ul>
               <li><b>Customers respond:</b> the Men's email lifts visits from 10.6% to 18.3%.</li>
               <li><b>Real is not worth it by default:</b> the Men's email earns about $0.26 per customer after costs; the Women's ($0.12) barely clears zero.</li>
               <li>Checking results daily declares a false winner <b>21%</b> of the time, not 5%.</li>
             </ul></div>
-            <div class="links"><a href="https://email-test-ecommerce.streamlit.app">Live app</a><a href="https://github.com/chinph/ecommerce-ab-testing">Code and case study</a></div>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="card" id="cookie">
-          <div class="fig"><img src="assets/cookie-cats.png" alt="Change in 1-day and 7-day retention with confidence intervals" loading="lazy"></div>
-          <div class="body">
-            <div class="badges"><span class="badge">A/B test</span><span class="badge">Public dataset</span></div>
-            <h3>Does moving a game's paywall gate later keep more players?</h3>
-            <p class="context"><span class="label">The problem</span>A mobile game makes players wait or pay at a "gate". The team tested moving it from level 30 to level 40.</p>
+      <article class="case compact" id="cookie">
+        <h3 class="case-title">Does moving a game's paywall gate later keep more players?</h3>
+        <a class="case-chart zoomable" href="assets/cookie-cats.png"><img src="assets/cookie-cats.png" alt="Change in 1-day and 7-day retention with confidence intervals" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>A mobile game makes players wait or pay at a "gate". The team tested moving it from level 30 to level 40.</p>
+            <div class="links"><a href="https://github.com/chinph/cookie-cats-game-ab-test">Code and case study</a></div>
+          </div>
+          <div class="col">
             <div class="insights"><span class="label">What I found</span><ul>
               <li><b>Most players leave before any gate:</b> only about a third reach level 30.</li>
               <li><b>Moving it hurts:</b> 7-day retention falls 0.8 points; keep the gate at 30.</li>
               <li>The test <b>failed its own randomization check</b>; the conclusion survives the worst case.</li>
             </ul></div>
-            <div class="links"><a href="https://github.com/chinph/cookie-cats-game-ab-test">Code and case study</a></div>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="card" id="olist">
-          <div class="fig"><img src="assets/olist.png" alt="Share of negative reviews by days delivered after the promised date" loading="lazy"></div>
-          <div class="body">
-            <div class="badges"><span class="badge">SQL + Python</span><span class="badge">Public dataset</span></div>
-            <h3>Why don't marketplace customers come back?</h3>
-            <p class="context"><span class="label">The problem</span>Olist, a Brazilian marketplace, sees few repeat buyers. Is late delivery the reason, and what should it fix first?</p>
+      <article class="case compact" id="olist">
+        <h3 class="case-title">Why don't marketplace customers come back?</h3>
+        <a class="case-chart zoomable" href="assets/olist.png"><img src="assets/olist.png" alt="Share of negative reviews by days delivered after the promised date" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>Olist, a Brazilian marketplace, sees few repeat buyers. Is late delivery the reason, and what should it fix first?</p>
+            <div class="links"><a href="https://github.com/chinph/olist-ecommerce-analysis">Code and case study</a></div>
+          </div>
+          <div class="col">
             <div class="insights"><span class="label">What I found</span><ul>
               <li><b>True retention is about 2%, not 3%:</b> 30% of "repeat" orders were split baskets on the same day.</li>
               <li><b>Lateness drives bad reviews:</b> from about 10% negative on time to about 80% at 8 or more days late.</li>
               <li><b>Fixing delivery protects reviews, not loyalty.</b> Start with the Rio de Janeiro route (42% of excess late orders).</li>
             </ul></div>
-            <div class="links"><a href="https://github.com/chinph/olist-ecommerce-analysis">Code and case study</a></div>
           </div>
-        </article>
-
-      </div>
+        </div>
+      </article>
     </div>
 
     <div class="track">
       <h3 class="track-title">Risk and monitoring in banking</h3>
-      <div class="cards">
 
-        <article class="card" id="credit">
-          <div class="fig"><img src="assets/credit-risk.png" alt="Profit against the share of loans approved for three scoring approaches" loading="lazy"></div>
-          <div class="body">
-            <div class="badges"><span class="badge">Credit modeling</span><span class="badge">Public dataset</span></div>
-            <h3>Which loan applicants should a lender approve?</h3>
-            <p class="context"><span class="label">The problem</span>A bad loan loses far more than a good loan earns, so the approval cut-off is a cost decision, not an accuracy contest.</p>
+      <article class="case compact" id="credit">
+        <h3 class="case-title">Which loan applicants should a lender approve?</h3>
+        <a class="case-chart zoomable" href="assets/credit-risk.png"><img src="assets/credit-risk.png" alt="Profit against the share of loans approved for three scoring approaches" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>A bad loan loses far more than a good loan earns, so the approval cut-off is a cost decision, not an accuracy contest.</p>
+            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/credit-risk">Code and case study</a></div>
+          </div>
+          <div class="col">
             <div class="insights"><span class="label">What I found</span><ul>
               <li><b>An explainable scorecard beats the platform's own score</b> (AUC 0.711 vs 0.647) on loans it had never seen.</li>
               <li><b>Approving the safest 76%</b> earns $0.39M more than approving everyone, on $104M of loans.</li>
               <li><b>The margin assumption matters more than the model:</b> the best approval rate ranges from 30% to 96%.</li>
             </ul></div>
-            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/credit-risk">Code and case study</a></div>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="card" id="complaints">
-          <div class="fig"><img src="assets/complaint-monitor.png" alt="Complaints and three alert thresholds after a huge spike" loading="lazy"></div>
-          <div class="body">
-            <div class="badges"><span class="badge">Monitoring</span><span class="badge">Public records</span></div>
-            <h3>Which customer complaints need attention this week?</h3>
-            <p class="context"><span class="label">The problem</span>A complaint team can review only a handful of issues a week. Which surges deserve it, and can the alert rule be trusted?</p>
+      <article class="case compact" id="complaints">
+        <h3 class="case-title">Which customer complaints need attention this week?</h3>
+        <a class="case-chart zoomable" href="assets/complaint-monitor.png"><img src="assets/complaint-monitor.png" alt="Complaints and three alert thresholds after a huge spike" loading="lazy"></a>
+        <div class="case-body">
+          <div class="col">
+            <p><span class="label">The problem</span>A complaint team can review only a handful of issues a week. Which surges deserve it, and can the alert rule be trusted?</p>
+            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/complaints">Code and case study</a></div>
+          </div>
+          <div class="col">
             <div class="insights"><span class="label">What I found</span><ul>
               <li><b>A robust alert rule</b> flags about 6 new issues a week and reliably catches surges in larger streams.</li>
               <li><b>The textbook rule went blind for 26 weeks</b> after one huge complaint wave.</li>
               <li><b>70% of alerts are short bursts,</b> so triage should separate waves from lasting problems.</li>
             </ul></div>
-            <div class="links"><a href="https://github.com/chinph/us-bank-analytics/tree/main/complaints">Code and case study</a></div>
           </div>
-        </article>
-
-      </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -254,7 +287,7 @@
   <div class="wrap">
     <h2>How I design charts</h2>
     <p class="section-note">A chart is an argument. These are the rules I hold mine to, with examples from the case studies.</p>
-    <ul class="habits viz-rules">
+    <ul class="habits">
       <li><b>Titles state the takeaway</b> wherever they can, not just the variables.</li>
       <li><b>Color has a job.</b> Deep blue for the result, lighter blue for alternatives, gray for benchmarks, orange only for the problem. The palette is tested for color-blind readers and contrast.</li>
       <li><b>Uncertainty is shown wherever it matters:</b> intervals, bands or ranges rather than a bare point.</li>
@@ -262,15 +295,15 @@
     </ul>
     <div class="gallery">
       <figure>
-        <img src="assets/viz-censoring.png" alt="Two lines comparing a naive and a corrected bad-loan rate over time" loading="lazy">
+        <a class="zoomable" href="assets/viz-censoring.png"><img src="assets/viz-censoring.png" alt="Two lines comparing a naive and a corrected bad-loan rate over time" loading="lazy"></a>
         <figcaption><b>Showing a trap, not just a result.</b> Two definitions on one axis make it obvious that recent loans only look safe because they are young.</figcaption>
       </figure>
       <figure>
-        <img src="assets/viz-uncertainty.png" alt="Ranks of product actions with ranges across 5,000 random weightings" loading="lazy">
+        <a class="zoomable" href="assets/viz-uncertainty.png"><img src="assets/viz-uncertainty.png" alt="Ranks of product actions with ranges across 5,000 random weightings" loading="lazy"></a>
         <figcaption><b>Making a ranking honest.</b> Each dot is a rank and each bar its range across 5,000 random weightings; orange marks evidence that is a lead, not a measurement.</figcaption>
       </figure>
       <figure>
-        <img src="assets/viz-funnel.png" alt="Funnel plot of companies' refund rates against the number of complaints" loading="lazy">
+        <a class="zoomable" href="assets/viz-funnel.png"><img src="assets/viz-funnel.png" alt="Funnel plot of companies' refund rates against the number of complaints" loading="lazy"></a>
         <figcaption><b>Separating signal from chance.</b> The shaded band is what chance alone would produce, so only companies outside it are called different.</figcaption>
       </figure>
     </div>
@@ -384,6 +417,31 @@
     <p class="fine">Data in these projects comes from public sources; each repository states its sources, licenses and limits.</p>
   </div>
 </footer>
+
+<dialog id="lightbox" aria-label="Enlarged image">
+  <button class="lb-close" type="button" aria-label="Close">&times;</button>
+  <img alt="">
+</dialog>
+<script>
+  // Click a chart or app screen to see it large. Without JavaScript the link simply opens the image.
+  (function () {
+    var lb = document.getElementById("lightbox");
+    if (!lb || typeof lb.showModal !== "function") return;
+    var img = lb.querySelector("img");
+    document.querySelectorAll("a.zoomable").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var src = a.querySelector("img");
+        img.src = a.getAttribute("href");
+        img.alt = src ? src.alt : "";
+        lb.showModal();
+      });
+    });
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb || e.target.classList.contains("lb-close")) lb.close();
+    });
+  })();
+</script>
 
 </body>
 </html>
